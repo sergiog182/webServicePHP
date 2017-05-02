@@ -1,5 +1,5 @@
 <?php
-	class calculadora
+	class business_Calculadora
 	{
 		/*
 		* funcion para sumar dos numeros
@@ -8,16 +8,16 @@
 		* return $out
 		* $out->status string indicador de error en el sevicio
 		* $out->statusMessage string descripcion de estado
-		* $out->sum float resultado de la suma 
+		* $out->resultado float resultado de la suma 
 		*/
 		public function sumar($in) {
-			$out = stdClass();
+			$out = new stdClass();
 			try {
 				if (empty($in->sumandoa) || empty($in->sumandob)) {
 					$out->status = "NOK";
 					$out->statusMessage = "La suma requiere dos numeros";
 				} else {
-					$out->suma = $in->sumandoa + $in->sumandob;
+					$out->resultado = $in->sumandoa + $in->sumandob;
 					$out->status = "OK";
 					$out->statusMessage = "Suma realizada";	
 				}
@@ -25,6 +25,8 @@
 				$out->status = "NOK";
 				$out->statusMessage = $e->getMessage();
 			}
+
+			return $out;
 		}
 
 		/*
@@ -34,16 +36,16 @@
 		* return $out
 		* $out->status string indicador de error en el sevicio
 		* $out->statusMessage string descripcion de estado
-		* $out->sum float resultado de la resta 
+		* $out->resultado float resultado de la resta 
 		*/
 		public function restar($in) {
-			$out = stdClass();
+			$out = new stdClass();
 			try {
 				if (empty($in->minuendo) || empty($in->sustraendo)) {
 					$out->status = "NOK";
 					$out->statusMessage = "La resta requiere dos numeros";
 				} else {
-					$out->suma = $in->minuendo - $in->sustraendo;
+					$out->resultado = $in->minuendo - $in->sustraendo;
 					$out->status = "OK";
 					$out->statusMessage = "Resta realizada";	
 				}
@@ -51,6 +53,8 @@
 				$out->status = "NOK";
 				$out->statusMessage = $e->getMessage();
 			}
+
+			return $out;
 		}
 
 		/*
@@ -60,16 +64,16 @@
 		* return $out
 		* $out->status string indicador de error en el sevicio
 		* $out->statusMessage string descripcion de estado
-		* $out->sum float resultado de la multiplicacion 
+		* $out->resultado float resultado de la multiplicacion 
 		*/
 		public function multiplicar($in) {
-			$out = stdClass();
+			$out = new stdClass();
 			try {
 				if (empty($in->multiplicando) || empty($in->multiplicador)) {
 					$out->status = "NOK";
 					$out->statusMessage = "La multiplicacion requiere dos numeros";
 				} else {
-					$out->suma = $in->multiplicando * $in->multiplicador;
+					$out->resultado = $in->multiplicando * $in->multiplicador;
 					$out->status = "OK";
 					$out->statusMessage = "Multiplicacion realizada";	
 				}
@@ -77,6 +81,8 @@
 				$out->status = "NOK";
 				$out->statusMessage = $e->getMessage();
 			}
+
+			return $out;
 		}
 
 		/*
@@ -86,10 +92,10 @@
 		* return $out
 		* $out->status string indicador de error en el sevicio
 		* $out->statusMessage string descripcion de estado
-		* $out->sum float resultado de la division
+		* $out->resultado float resultado de la division
 		*/
 		public function dividir($in) {
-			$out = stdClass();
+			$out = new stdClass();
 			try {
 				if (empty($in->dividendo) || empty($in->divisor)) {
 					$out->status = "NOK";
@@ -99,7 +105,7 @@
 						$out->status = "NOK";
 						$out->statusMessage = "El divisor no puede ser 0";
 					} else {
-						$out->suma = $in->dividendo / $in->divisor;
+						$out->resultado = $in->dividendo / $in->divisor;
 						$out->status = "OK";
 						$out->statusMessage = "Division realizada";	
 					}
@@ -108,5 +114,7 @@
 				$out->status = "NOK";
 				$out->statusMessage = $e->getMessage();
 			}
+
+			return $out;
 		}
 	}

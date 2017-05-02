@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://xml.calculadora.com/multiplicarResponse"
+    targetNamespace= "http://xml.calculadora.com/multiplicarResponse"
+    elementFormDefault="qualified">
+    
+    <xsd:element name="multiplicarResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+
+                <xsd:element name="status" minOccurs="1" maxOccurs="1">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:annotation>
+                                <xsd:documentation>Codigo de respuesta del servicio</xsd:documentation>
+                            </xsd:annotation>
+                            <xsd:maxLength value="3"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+
+                <xsd:element name="statusMessage" minOccurs="1" maxOccurs="1">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:annotation>
+                                <xsd:documentation>Descripcion de la respuesta del servicio</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+
+                <xsd:element name="resultado" minOccurs="0" maxOccurs="1">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                            <xsd:annotation>
+                                <xsd:documentation>Resultado de la operacion</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

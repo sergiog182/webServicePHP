@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://xml.calculadora.com/dividirRequest"
+    targetNamespace="http://xml.calculadora.com/dividirRequest"
+    elementFormDefault="qualified">
+    
+    <xsd:element name="dividirRequest">
+        <xsd:complexType>
+            <xsd:sequence> 
+                
+                <xsd:element name="dividendo" minOccurs="1" maxOccurs="1">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                            <xsd:annotation>
+                                <xsd:documentation>dividendo de la operacion</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                
+                <xsd:element name="divisor" minOccurs="1" maxOccurs="1">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                            <xsd:annotation>
+                                <xsd:documentation>divisor de la operacion</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

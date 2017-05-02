@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://xml.calculadora.com/sumarRequest"
+    targetNamespace="http://xml.calculadora.com/sumarRequest"
+    elementFormDefault="qualified">
+    
+    <xsd:element name="sumarRequest">
+        <xsd:complexType>
+            <xsd:sequence> 
+                
+                <xsd:element name="sumandoa" minOccurs="1" maxOccurs="1">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                            <xsd:annotation>
+                                <xsd:documentation>Primer numero a sumar</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+
+                <xsd:element name="sumandob" minOccurs="1" maxOccurs="1">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                            <xsd:annotation>
+                                <xsd:documentation>Segundo numero a sumar</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
